@@ -1,6 +1,16 @@
 #include"vector.h"
 
+typedef struct _META
+{
+    int num;
+} META;
 
+
+typedef struct _vector{
+    META* meta;
+    size_t capacity;
+    size_t size;
+} vector;
 
 
 vector* create_vector(){
@@ -8,8 +18,8 @@ vector* create_vector(){
     if(!vec){
         return NULL;
     }
-    vec->data = (int*) malloc(sizeof(int));
-    if(!vec->data){
+    vec->meta = (META*) malloc(sizeof(META));
+    if(!vec->meta){
         free(vec);
         return NULL;
     }
@@ -17,4 +27,12 @@ vector* create_vector(){
     vec->size = 1;
 
     return vec;
+}
+
+size_t size(vector* vec){
+    return vec->size;
+}
+
+int is_empty(vector* vec){
+    return vec->size == 0;
 }

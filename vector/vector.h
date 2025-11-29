@@ -4,12 +4,8 @@
 #include <stdlib.h>
 
 
-typedef struct _vector
-{
-    int* data;
-    u_int capacity;
-    u_int size;
-} vector;
+typedef struct _vector vector;
+typedef struct _META META;
 
 
 vector* create_vector();
