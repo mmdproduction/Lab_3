@@ -5,5 +5,5 @@
 int main(){
     vector* vec;
     vec = create_vector();
-    puts("jdj");
+    printf("%u", get(vec));
 }
