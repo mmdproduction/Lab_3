@@ -1,5 +1,5 @@
 #pragma once
-#include"../vector/META.h"
+#include"META.h"
 #include<string.h>
 #include<math.h>
 

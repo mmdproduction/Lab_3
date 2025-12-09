@@ -72,3 +72,4 @@ void swap(vector* vec, u_int first, u_int second){
         vec->meta[second] = buf;
     }
 }
+//add delete_vector and delete_meta
