@@ -5,5 +5,6 @@ project(lab3 LANGUAGES C)
 set(SRC main.c)
 add_executable(lab3 ${SRC})
 add_subdirectory(vector)
+add_subdirectory(sorting)
 
 target_link_libraries(lab3 vector)

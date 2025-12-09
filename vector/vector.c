@@ -40,6 +40,7 @@ META* get_by_index(vector* vec, u_int index){
     }
     return vec->meta[index];
 }
+
 void pop_back(vector* vec) {
     if (vec->size > 0) {
         vec->size--;
@@ -55,6 +56,7 @@ void resize(vector* vec){
     }
 
 }
+
 size_t size(vector* vec){
     return vec->size;
 }
@@ -63,4 +65,10 @@ int is_empty(vector* vec){
     return vec->size == 0;
 }
 
-
+void swap(vector* vec, u_int first, u_int second){
+    if(first <= vec->size && second <= vec->size){
+        META* buf = vec->meta[first];
+        vec->meta[first] = vec->meta[second];
+        vec->meta[second] = buf;
+    }
+}
