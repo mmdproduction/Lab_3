@@ -18,7 +18,7 @@ vector* create_vector(){
         return NULL;
     }
     vec->capacity = 1;
-    vec->size = 1;
+    vec->size = 0;
 
     return vec;
 }
