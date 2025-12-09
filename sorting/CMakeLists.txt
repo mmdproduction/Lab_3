@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(vector LANGUAGES C)
+project(sorting LANGUAGES C)
 
 set(SRC sorting.c compare.c)
 

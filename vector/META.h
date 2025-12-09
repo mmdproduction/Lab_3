@@ -5,7 +5,11 @@
 #include <stdbool.h>
 
 typedef struct _META META;
-typedef enum _type type_t;
+typedef enum _type{
+        _PANEL,
+        _BRICKS,
+        _MONOLITE
+} type_t;
 
 
 META* create_META(char* name_builder,

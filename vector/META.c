@@ -1,10 +1,5 @@
 #include"META.h"
 
-typedef enum _type{
-        _PANEL,
-        _BRICKS,
-        _MONOLITE
-} type_t;
 typedef struct _META
 {
     char* name_builder;
@@ -16,6 +11,25 @@ typedef struct _META
     u_int num_floars;
     float average_area;
 } META;
+
+META* create_META(char* name_builder,
+    char* name_district,
+    type_t type,
+    u_int year_of_build,
+    bool is_lift, 
+    u_int num_flat,
+    u_int num_floars,
+    float average_area){
+        META* meta = (META*)malloc(sizeof(META));
+        meta->name_builder = name_builder;
+        meta->name_district = name_district;
+        meta->type = type;
+        meta->year_of_build = year_of_build;
+        meta->is_lift = is_lift;
+        meta->num_flat = num_flat;
+        meta->num_floars = num_floars;
+        meta->average_area = average_area;
+    }
 
 char* get_name_builder(META* meta){
     return meta->name_builder;

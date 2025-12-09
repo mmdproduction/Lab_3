@@ -7,8 +7,6 @@
 
 typedef struct _vector vector;
 
-
-
 vector* create_vector();
 void push_back(vector* vec, META* value);
 META* get_by_index(vector* vec, u_int index);
