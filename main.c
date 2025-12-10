@@ -11,6 +11,12 @@ int main(int argc, char* argv[]){
     if(args->help){
         print_help();
     }
+    if(args->input_csv){
+        puts(args->input_file);
+        vector* vec_2 = input_out_csv(args->input_file);
+        print(vec_2);
+    }
+
     vector* vec;
     META* q = create_META("brih_prom", "altushkovo", 1, 2007, true, 66, 55, 12.43f);
     META* r = create_META("drih_prom", "altushkovo", 2, 2008, false, 66, 55, 12.43f);
@@ -27,7 +33,6 @@ int main(int argc, char* argv[]){
 
     print(vec);
 
-    vector* vec_2 = input();
-    print(vec_2);
+    
 
 }

@@ -1,10 +1,10 @@
 #include"flag.h"
 
 void print_help(){
-    printf("\t-h, --help  Show this info");
-    printf("\t-g, --generate==N  Generate N lines random Data");
-    printf("\t-s, --sort  Sort data");
-    printf("\t-t, --type==TYPE  Change TYPE of sort");
+    printf("\t-h, --help  Show this info\n");
+    printf("\t-g, --generate==N  Generate N lines random Data\n");
+    printf("\t-s, --sort  Sort data\n");
+    printf("\t-t, --type==TYPE  Change TYPE of sort\n");
 }
 
 int parse_args(int argc, char* argv[], Args* args){
@@ -19,7 +19,7 @@ int parse_args(int argc, char* argv[], Args* args){
     args->print = false;
     args->num = 0;
 
-    for(u_int i = 1; i < argc; i++){
+    for(u_int i = 1; i < argc; ++i){
         char* arg = argv[i];
         if(strcmp(arg, "-h") == 0 || strcmp(arg, "--help") == 0){
             args->help = true;
@@ -57,12 +57,13 @@ int parse_args(int argc, char* argv[], Args* args){
                 fprintf(stderr, "INVALID FLAG");
                 return 0;
             }
-            args->flag = value;
+            args->flag = strdup(value);
         }
         else if(strncmp(arg, "-i", 2) == 0 || strncmp(arg, "--in", 4) == 0){
             char* value = NULL;
             if(strncmp(arg, "--in=", 5) == 0){
                 value = arg + 5;
+                puts(value);
             }
             else if(strncmp(arg, "-i", 2) == 0 && i+1 < argc){
                 value = argv[++i];
@@ -71,9 +72,24 @@ int parse_args(int argc, char* argv[], Args* args){
                 fprintf(stderr, "INVALID FLAG");
                 return 0;
             }
-            args->flag = value;
+            args->input_file = strdup(value);
         }
-        return 1;
+        else if(strncmp(arg, "-g", 2) == 0 || strncmp(arg, "--generate", 10) == 0){
+            char* value = NULL;
+            if(strncmp(arg, "--generate=", 11) == 0){
+                value = arg + 11;
+            }
+            else if(strncmp(arg, "-g", 2) == 0 && i+1 < argc){
+                value = argv[++i];
+            }
+            else{
+                fprintf(stderr, "INVALID FLAG");
+                return 0;
+            }
+            args->num = atoi(value);
+        }
+        
     }
+    return 1;
 }
 
