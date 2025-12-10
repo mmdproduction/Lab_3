@@ -3,8 +3,14 @@
 #include"sorting/sorting.h"
 #include"outputs/outputs.h"
 #include"inputs/inputs.h"
+#include"flag/flag.h"
 
-int main(){
+int main(int argc, char* argv[]){
+    Args* args = (Args*)malloc(sizeof(Args));
+    parse_args(argc, argv, args);
+    if(args->help){
+        print_help();
+    }
     vector* vec;
     META* q = create_META("brih_prom", "altushkovo", 1, 2007, true, 66, 55, 12.43f);
     META* r = create_META("drih_prom", "altushkovo", 2, 2008, false, 66, 55, 12.43f);
@@ -21,7 +27,7 @@ int main(){
 
     print(vec);
 
-    vector* vec_2 = input_out_csv("output.csv");
+    vector* vec_2 = input();
     print(vec_2);
 
 }

@@ -6,3 +6,4 @@
 
 
 vector* input_out_csv(char* filename);
+vector* input();

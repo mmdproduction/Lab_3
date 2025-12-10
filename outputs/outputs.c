@@ -60,7 +60,7 @@ void print(vector* vec){
     fprintf(stdout, "|==========BUILDER==========|=========DISTRICT=========|=====TYPE=====|=====YEAR=====|=====LIFT=====|====NUM_FLAT====|====NUM_FLOARS====|=====AVERAGE_AREA=====|\n");
     for(u_int index = 0; index < size(vec); index++){
         META* meta = get_by_index(vec, index);
-        fprintf(stdout, "|%-27.27s|%-26.26s|%-14.14s|%-14.14u|%-14.14s|%-16.16u|%-18.18u|%-22.2f|\n",
+        fprintf(stdout, "|%-27.27s|%-26.26s|%-14.14s|%-14u|%-14.14s|%-16u|%-18u|%-22.2f|\n",
             get_name_builder(meta), 
             get_name_district(meta), 
             type_t_output(meta), 
