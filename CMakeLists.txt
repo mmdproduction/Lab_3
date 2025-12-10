@@ -7,5 +7,6 @@ add_executable(lab3 ${SRC})
 add_subdirectory(vector)
 add_subdirectory(sorting)
 add_subdirectory(outputs)
+add_subdirectory(inputs)
 
-target_link_libraries(lab3 vector sorting outputs)
+target_link_libraries(lab3 vector sorting outputs inputs)

@@ -3,6 +3,7 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include<string.h>
 
 typedef struct _META META;
 typedef enum _type{
@@ -12,8 +13,8 @@ typedef enum _type{
 } type_t;
 
 
-META* create_META(char* name_builder,
-    char* name_district,
+META* create_META(const char* name_builder,
+    const char* name_district,
     type_t type,
     u_int year_of_build,
     bool is_lift, 
@@ -29,5 +30,7 @@ bool get_is_lift(META* meta);
 u_int get_num_flat(META* meta);
 u_int get_num_floars(META* meta);
 float get_average_area(META* meta);
+
+void delete_META(META** meta);
 
 

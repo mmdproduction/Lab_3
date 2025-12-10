@@ -12,8 +12,8 @@ typedef struct _META
     float average_area;
 } META;
 
-META* create_META(char* name_builder,
-    char* name_district,
+META* create_META(const char* name_builder,
+    const char* name_district,
     type_t type,
     u_int year_of_build,
     bool is_lift, 
@@ -21,8 +21,8 @@ META* create_META(char* name_builder,
     u_int num_floars,
     float average_area){
         META* meta = (META*)malloc(sizeof(META));
-        meta->name_builder = name_builder;
-        meta->name_district = name_district;
+        meta->name_builder = strdup(name_builder);
+        meta->name_district = strdup(name_district);
         meta->type = type;
         meta->year_of_build = year_of_build;
         meta->is_lift = is_lift;
@@ -57,3 +57,7 @@ float get_average_area(META* meta){
 }
 
 
+void delete_META(META** meta){
+    free((*meta));
+    meta = NULL;
+}
