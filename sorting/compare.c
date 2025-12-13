@@ -25,8 +25,8 @@ int mtcmp(META* left, META* right){
                 }
             else return (get_type(left) > get_type(right) ?  LEFT : RIGHT); //change to defines
             }
-        else return strcmp(get_name_district(left), get_name_district(right));
+        else return -strcmp(get_name_district(left), get_name_district(right));
     }
-    else return strcmp(get_name_builder(left), get_name_builder(right));
+    else return -strcmp(get_name_builder(left), get_name_builder(right));
     
 }

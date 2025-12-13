@@ -60,10 +60,10 @@ int parse_args(int argc, char* argv[], Args* args){
             args->flag = strdup(value);
         }
         else if(strncmp(arg, "-i", 2) == 0 || strncmp(arg, "--in", 4) == 0){
+            args->input_csv = true;
             char* value = NULL;
             if(strncmp(arg, "--in=", 5) == 0){
                 value = arg + 5;
-                puts(value);
             }
             else if(strncmp(arg, "-i", 2) == 0 && i+1 < argc){
                 value = argv[++i];
@@ -75,6 +75,7 @@ int parse_args(int argc, char* argv[], Args* args){
             args->input_file = strdup(value);
         }
         else if(strncmp(arg, "-g", 2) == 0 || strncmp(arg, "--generate", 10) == 0){
+            args->gen = true;
             char* value = NULL;
             if(strncmp(arg, "--generate=", 11) == 0){
                 value = arg + 11;
