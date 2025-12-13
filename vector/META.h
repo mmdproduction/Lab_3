@@ -1,9 +1,9 @@
 #pragma once
-#include"define.h"
 #include<stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include<string.h>
+#include"define.h"
 
 typedef struct _META META;
 typedef enum _type{

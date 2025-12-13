@@ -5,3 +5,4 @@ set(SRC generate.c)
 
 add_library(generate ${SRC})
 target_include_directories(generate PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../include/)
+target_include_directories(generate PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../vector/)

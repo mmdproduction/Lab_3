@@ -1,5 +1,5 @@
 #pragma once
-#include"define.h"
+#include"../include/define.h"
 #include"vector.h"
 #include"compare.h"
 
