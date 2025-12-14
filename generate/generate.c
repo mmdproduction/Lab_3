@@ -7,7 +7,7 @@ vector* generate(u_int num){
     vector* vec = create_vector();
     for(u_int i = 0; i < num; ++i){
         char* name_builder = builders[rand() % (sizeof(builders) / sizeof(builders[0]))];
-        char* name_district = distircts[rand() % (sizeof(distircts) / sizeof(distircts[0]))];
+        char* name_district = districts[rand() % (sizeof(districts) / sizeof(districts[0]))];
         type_t type = (type_t)(rand() % 3);
         u_int year_of_build = 1500 +  rand() % (2026 - 1500 + 1);
         bool is_lift = (bool)(rand() % 2); 

@@ -28,10 +28,10 @@ int main(int argc, char* argv[]){
 
         if(args->sort){
             if(strcmp(args->flag, "desc") == 0 || strcmp(args->flag, "D") == 0){
-                buble_sort_down(vec);
+                buble_sort_down(vec, mtcmp);
             }
             else{
-                buble_sort_up(vec);
+                buble_sort_up(vec, mtcmp);
             }
         }
 
