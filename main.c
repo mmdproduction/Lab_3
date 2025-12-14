@@ -45,4 +45,9 @@ int main(int argc, char* argv[]){
             output(vec);
         }
     }
+
+    vector* vec_2 = generate(20);
+    print(vec_2);
+    quick_sort(vec_2, 0, size(vec_2) - 1, mtcmp);
+    print(vec_2);
 }
