@@ -1,13 +1,13 @@
 #include"flag.h"
 
 void print_help(){
-    puts("\t-h, --help  Show this info\n");
-    puts("\t-g, --generate=N  Generate N lines random Data\n");
-    puts("\t-s, --sort  Sort data\n");
-    puts("\t-p, --print  Print table of DATA\n");
-    puts("\t-o, --output=FILENAME  output DATA in FILENAME\n");
-    puts("\t-i, --in=FILENAME take DATA from FILENAME\n");
-    puts("\t-t, --type=TYPE  Change TYPE of sort\n");
+    puts("\t-h, --help  Show this info");
+    puts("\t-g, --generate=N  Generate N lines random Data");
+    puts("\t-s, --sort  Sort data");
+    puts("\t-p, --print  Print table of DATA");
+    puts("\t-o, --output=FILENAME  output DATA in FILENAME");
+    puts("\t-i, --in=FILENAME take DATA from FILENAME");
+    puts("\t-t, --type=TYPE  Change TYPE of sort");
 }
 
 int parse_args(int argc, char* argv[], Args* args){
