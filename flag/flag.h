@@ -16,6 +16,7 @@ typedef struct _Args{
     char* out_file;
     char* input_file;
     u_int num;
+    bool quick;
 } Args;
 
 

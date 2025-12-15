@@ -21,11 +21,15 @@ int parse_args(int argc, char* argv[], Args* args){
     args->output_csv = false;
     args->print = false;
     args->num = 0;
+    args->quick = false;
 
     for(u_int i = 1; i < argc; ++i){
         char* arg = argv[i];
         if(strcmp(arg, "-h") == 0 || strcmp(arg, "--help") == 0){
             args->help = true;
+        }
+        else if(strcmp(arg, "-q") == 0 || strcmp(arg, "--quick") == 0){
+            args->quick = true;
         }
         else if(strcmp(arg, "-s") == 0 || strcmp(arg, "--sort") == 0){
             args->sort = true;
@@ -74,6 +78,8 @@ int parse_args(int argc, char* argv[], Args* args){
             else{
                 fprintf(stderr, "INVALID FLAG");
                 return 0;
+
+                
             }
             args->input_file = strdup(value);
         }
