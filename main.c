@@ -47,23 +47,21 @@ void processing_output(vector** vec, Args** args){
 }
 
 int main(int argc, char* argv[]){
+    FILE*  graf_f = fopen("buble.txt", "a+");
     Args* args = (Args*)malloc(sizeof(Args));
     parse_args(argc, argv, args);
     vector* vec;
-    double delta = 0.;
 
     if(args->help){
         print_help();
     }
     else{
         processing_input(&vec, &args);
-        clock_t start = clock();
+
         processing_sort(&vec, &args);
-        clock_t end = clock();
+
         processing_output(&vec, &args);
 
-        delta = (double)(end - start) / CLOCKS_PER_SEC;
     }
-
-    printf("%.2f %u", delta, size(vec));
+    delete_vector(&vec);
 }

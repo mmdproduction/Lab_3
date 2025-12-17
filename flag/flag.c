@@ -43,7 +43,7 @@ int parse_args(int argc, char* argv[], Args* args){
             if(strncmp(arg, "--out=", 6) == 0){
                 value = arg + 6;
             }
-            else if(strncmp(arg, "-o", 2 && i+1 < argc) == 0){
+            else if(strncmp(arg, "-o", 2) == 0 && i+1 < argc){
                 value = argv[++i];
             }
             else{

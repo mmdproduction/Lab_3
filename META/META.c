@@ -59,5 +59,5 @@ float get_average_area(META* meta){
 
 void delete_META(META** meta){
     free((*meta));
-    meta = NULL;
+    *meta = NULL;
 }

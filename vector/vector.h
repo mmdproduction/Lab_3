@@ -14,3 +14,4 @@ void resize(vector* vec);
 size_t size(vector* vec);
 int is_empty(vector* vec);
 void swap(vector* vec, u_int first, u_int second);
+void delete_vector(vector** vec);
