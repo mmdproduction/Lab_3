@@ -23,7 +23,7 @@ Every META include nine fields:
 | float                   | averege_area  | The average room area in the building      |
 
 ##### Meta Example
-> Merkezi,Bethnal,BRICKS,2022,NO,638,58,14.74
+> `Merkezi,Bethnal,BRICKS,2022,NO,638,58,14.74`
 
 #### Container
 The vector is used to support the following functions:
@@ -39,7 +39,7 @@ The vector is used to support the following functions:
 #### Sorting 
 
 Order of fields:
-> name_builder -> name_district -> type -> year_of_build -> is_lift -> num_flat -> num_floars -> average_area
+>` name_builder -> name_district -> type -> year_of_build -> is_lift -> num_flat -> num_floars -> average_area`
 
 Two types of sorting are supported:
 - Buble sort
@@ -47,3 +47,19 @@ Two types of sorting are supported:
 
 ## Usage
 
+The program supports 4 launch types:
+1. Generating random data `--generate` `-g`
+2. Sort data in container (bublesort) `--sort` `-s`
+3. Sort data in container (quicksort) `--quick` `-q`
+4. Output to a fixed-width table `--print` `-p`
+#### Flags
+
+| Full name      | Short name | Description |
+| -------------- | ---------- | ----------- |
+| --help         | -h         |             |
+| --generate=`N` | -g `N`     |             |
+| --in=`F`       | -i `F`     |             |
+| --out=`F`      | -o `F`     |             |
+| --sort         | -s         |             |
+| --quick        | -q         |             |
+| --print        | -p         |             |
