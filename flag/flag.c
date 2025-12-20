@@ -86,7 +86,6 @@ int parse_args(int argc, char* argv[], Args* args){
         else if(strncmp(arg, "-g", 2) == 0 || strncmp(arg, "--generate", 10) == 0){
             args->gen = true;
             char* value = NULL;
-            char* end;
             if(strncmp(arg, "--generate=", 11) == 0){
                 value = arg + 11;
             }
@@ -97,7 +96,7 @@ int parse_args(int argc, char* argv[], Args* args){
                 fprintf(stderr, "INVALID FLAG");
                 return 0;
             }
-            args->num = strtoul(value, &end, 10);
+            args->num = strtoul(value, NULL, 10);
         }
         
     }

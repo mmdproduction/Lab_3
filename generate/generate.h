@@ -124,4 +124,5 @@ static char* districts[] = {
 };
 
 
-vector* generate(u_int num);
+META* generate();
+vector* generator(u_int num);

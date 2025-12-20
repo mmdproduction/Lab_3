@@ -10,7 +10,7 @@
 void processing_input(vector** vec, Args** args){
     if((*args)->gen){
             printf("%u",(*args)->num);
-            *vec = generate((*args)->num);
+            *vec = generator((*args)->num);
         }
         else if((*args)->input_csv){
             *vec = input_out_csv((*args)->input_file);
@@ -28,7 +28,7 @@ void processing_sort(vector** vec, Args** args){
                 buble_sort_up(*vec, mtcmp);
             }
         }
-    if((*args)->quick){
+    else if((*args)->quick){
             quick_sort(*vec, 0, size(*vec) - 1, mtcmp);
         }
     
@@ -47,7 +47,7 @@ void processing_output(vector** vec, Args** args){
 }
 
 int main(int argc, char* argv[]){
-    FILE*  graf_f = fopen("buble.txt", "a+");
+    FILE*  graf_f = fopen("bublesort.txt", "a+");
     Args* args = (Args*)malloc(sizeof(Args));
     parse_args(argc, argv, args);
     vector* vec;
@@ -57,11 +57,8 @@ int main(int argc, char* argv[]){
     }
     else{
         processing_input(&vec, &args);
-
         processing_sort(&vec, &args);
-
         processing_output(&vec, &args);
-
     }
     delete_vector(&vec);
 }

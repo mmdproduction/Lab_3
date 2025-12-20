@@ -34,7 +34,7 @@ void push_back(vector* vec, META* value) {
     vec->meta[vec->size] = value;
     vec->size++;
 }
-META* get_by_index(vector* vec, u_int index){
+META* get_at(vector* vec, u_int index){
     if (index >= vec->size) {
         return NULL;
     }
