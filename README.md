@@ -54,12 +54,55 @@ The program supports 4 launch types:
 4. Output to a fixed-width table `--print` `-p`
 #### Flags
 
-| Full name      | Short name | Description |
-| -------------- | ---------- | ----------- |
-| --help         | -h         |             |
-| --generate=`N` | -g `N`     |             |
-| --in=`F`       | -i `F`     |             |
-| --out=`F`      | -o `F`     |             |
-| --sort         | -s         |             |
-| --quick        | -q         |             |
-| --print        | -p         |             |
+| Full Flag           | Short Flag | Description                                                        |
+| ------------------- | ---------- | ------------------------------------------------------------------ |
+| -\-help             | -h         | Show help bar                                                      |
+| -\-generate=`N`     | -g `N`     | Generate `N` random buldings data                                  |
+| -\-in=`File`        | -i `File`  | Input from a `File` (stdin by default)                             |
+| -\-out=`File`       | -o `File`  | Output to a `File` (stdout by default)                             |
+| -\-sort             | -s         | Sort the list using buble sort (ascending by default)              |
+| -\-quick            | -q         | Sort the list using quick sort (ascending by default)              |
+| -\-print            | -p         | Output to a fixed-width table                                      |
+| -\-type=`asc(desc)` | -t `A(D)`  | Change the sorting mode (`A/asc - ascending, D/desc - descending`) |
+
+## Building a project
+
+###### `CMake`
+With Cmake (CMakeLists.txt)
+Link libraries: `vector`, `META`, `inputs`, `outputs`, `flags`, `generate`, `sorting`
+
+## Example
+
+#### File `input.csv`
+
+```csv
+BUILDER,DISTRICT,TYPE,YEAR,LIFT,NUM_FLAT,NUM_FLOARS,AVERAGE_AREA
+Maire Tecnimont,Chadwell,PANEL,1588,YES,558,62,6.83
+BUILD GODS,Clapham Crystal,PANEL,1998,NO,368,23,6.51
+AlBawani,KONEVO,BRICKS,1576,NO,1350,75,10.11
+Orion-Staete,Heath Chingford,PANEL,1679,NO,480,24,10.46
+Kiewit Corp.,KONEVO,PANEL,1817,YES,284,71,6.74
+Limak Holding,Green Brentford,MONOLITE,1700,YES,858,78,6.26
+```
+
+##### Command
+
+```bash
+lab.exe -i input.csv -s
+```
+
+#### Output (stdout)
+
+```csv
+BUILDER,DISTRICT,TYPE,YEAR,LIFT,NUM_FLAT,NUM_FLOARS,AVERAGE_AREA
+AlBawani,KONEVO,BRICKS,1576,NO,1350,75,10.11
+BUILD GODS,Clapham Crystal,PANEL,1998,NO,368,23,6.51
+Kiewit Corp.,KONEVO,PANEL,1817,YES,284,71,6.74
+Limak Holding,Green Brentford,MONOLITE,1700,YES,858,78,6.26   
+Maire Tecnimont,Chadwell,PANEL,1588,YES,558,62,6.83
+Orion-Staete,Heath Chingford,PANEL,1679,NO,480,24,10.46 
+```
+
+## License
+
+Academic project. All rights reserved.   Not intended for redistribution or commercial use.
